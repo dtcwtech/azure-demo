@@ -16,12 +16,12 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-        - name: Deploy ARM template
-          uses: azure/CLI@v1
-          with: 
-            inlinescript: |
-              az deployment group create \
-              --name StorageAccountDeployment \
-              --resource-group azure-demo \
-              --template-file arm-templates/storageaccout.json \
-              --parameters storageAccountType=Standard_LRS
+      - name: Deploy ARM template
+        uses: azure/CLI@v1
+        with: 
+          inlinescript: |
+            az deployment group create \
+            --name StorageAccountDeployment \
+            --resource-group azure-demo \
+            --template-file arm-templates/storageaccout.json \
+            --parameters storageAccountType=Standard_LRS
