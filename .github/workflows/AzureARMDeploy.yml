@@ -27,6 +27,7 @@
       #       --parameters storageAccountType=Standard_LRS
 
 
+
 on: [push]
 
 name: uploadmathhomework
