@@ -93,7 +93,7 @@ jobs:
               echo The result is $value
 
     - name: Upload to Blob Storage
-        uses: ./.github/actions/upload-artifacts
+        uses: actions/upload-artifact@v3
         with:
           account: azuredemostdsa
           destination: mathhomework
