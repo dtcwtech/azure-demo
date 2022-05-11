@@ -61,10 +61,13 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name "azuredemostdsa" --auth-mode key -d 'testvers2' -s .
+            az storage blob upload-batch --account-name "azuredemostdsa" --auth-mode key -d 'testvers2' -s . --if-modified-since 2022-05-10
 
     # Azure logout
       - name: logout
         run: |
             az logout
         if: always()
+
+
+        #--if-modified-since 2014-11-08 <- look into implementing 
