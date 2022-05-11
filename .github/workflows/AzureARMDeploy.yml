@@ -37,11 +37,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Login to azure
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
       - name: Checkout source code
         uses: actions/checkout@v2
 
@@ -55,6 +50,11 @@ jobs:
         with:
           name: homework
           path: math-homework1.txt
+      
+      - name: Login to azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure
         uses: azure/CLI@v1
