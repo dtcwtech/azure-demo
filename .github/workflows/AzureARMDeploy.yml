@@ -30,10 +30,7 @@
 on: [push]
 
 name: uploadmathhomework
-
-env:
   
-
 jobs:
 
   deploy:
