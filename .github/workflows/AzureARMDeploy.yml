@@ -31,6 +31,9 @@ on: [push]
 
 name: uploadmathhomework
 
+env:
+  
+
 jobs:
 
   deploy:
@@ -59,5 +62,5 @@ jobs:
       - name: Upload to Blob Storage
         uses: actions/upload-artifact@v3
         with:
-          account: azuredemostdsa
-          destination: mathhomework
+          account_name: azuredemostdsa
+          container_name: mathhomework
