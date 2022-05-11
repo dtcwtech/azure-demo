@@ -23,5 +23,5 @@ jobs:
             az deployment group create \
             --name StorageAccountDeployment \
             --resource-group azure-demo \
-            --template-file arm-templates/storageaccout.json \
+            --template-file arm-templates/storageaccount.json \
             --parameters storageAccountType=Standard_LRS
