@@ -60,4 +60,4 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name "azuredemostdsa" --sas-token ${{ secrets.SAS_TOKEN }} --auth-mode key -d 'mathhomework' -s .
+            az storage blob upload-batch --account-name "azuredemostdsa" --auth-mode login -d 'mathhomework' -s .
