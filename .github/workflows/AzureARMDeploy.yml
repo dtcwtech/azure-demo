@@ -48,16 +48,16 @@ jobs:
       - name: Add 3 and 7
         shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
+          expr 3 + 7 > math-homework1.txt
 
       - name: Upload math result for job 1
         uses: actions/upload-artifact@v3
         with:
           name: homework
-          path: math-homework.txt
+          path: math-homework1.txt
 
       - name: Deploy to Azure
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name "azuredemostdsa" --auth-mode login -d 'mathhomework' -s .
+            az storage blob upload-batch --account-name "azuredemostdsa" --auth-mode key -d 'mathhomework' -s .
