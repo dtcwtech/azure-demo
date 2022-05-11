@@ -34,30 +34,30 @@ name: uploadmathhomework
 jobs:
 
   deploy:
-  runs-on: ubuntu-latest
-  steps:
+    runs-on: ubuntu-latest
+    steps:
 
-    - name: Login to azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Checkout source code
-      uses: actions/checkout@v2
-
-    - name: Add 3 and 7
-      - shell: bash
-          run: |
-              expr 3 + 7 > math-homework.txt
-
-    - name: Upload math result for job 1
-      uses: actions/upload-artifact@v3
-      with:
-          name: homework
-          path: math-homework.txt
-
-    - name: Upload to Blob Storage
-      uses: actions/upload-artifact@v3
+      - name: Login to azure
+        uses: azure/login@v1
         with:
-          account: azuredemostdsa
-          destination: mathhomework
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Add 3 and 7
+        - shell: bash
+            run: |
+                expr 3 + 7 > math-homework.txt
+
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v3
+        with:
+            name: homework
+            path: math-homework.txt
+
+      - name: Upload to Blob Storage
+        uses: actions/upload-artifact@v3
+          with:
+            account: azuredemostdsa
+            destination: mathhomework
